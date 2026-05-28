@@ -25,6 +25,7 @@ import ArcadeBackground from '@/components/arcade-background'
 import PageTransition from '@/components/page-transition'
 
 import Navigation from '@/components/navigation'
+import { AudioPlayer } from '@/components/AudioPlayer'
 
 export default function RootLayout({
   children,
@@ -39,6 +40,7 @@ export default function RootLayout({
         <PixelCursor />
         <PageTransition />
         <Navigation />
+        <AudioPlayer />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -22,18 +22,18 @@ export default function HeroSection() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4"
     >
-      {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "40px 40px",
-          }}
+      {/* Animated video background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40 mix-blend-screen"
+          src="https://assets.mixkit.co/videos/preview/mixkit-playing-a-retro-video-game-41870-large.mp4"
         />
+        {/* Fallback grid or overlay */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <motion.div
