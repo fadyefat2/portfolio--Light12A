@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { useArcadeAnimations } from "@/hooks/use-arcade-animations"
-
+import TetrisBackground from "@/components/tetris-background"
 
 export default function HeroSection() {
   const [showCursor, setShowCursor] = useState(true)
@@ -22,18 +22,9 @@ export default function HeroSection() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4"
     >
-      {/* Video background for the Hero section */}
+      {/* Tetris falling blocks background for the Hero section */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-30"
-          src="/arcade-bg.mp4"
-        />
-        {/* Dark overlay to make text readable */}
-        <div className="absolute inset-0 bg-black/50" />
+        <TetrisBackground />
       </div>
 
       <motion.div
@@ -43,7 +34,7 @@ export default function HeroSection() {
         className="text-center relative z-10"
       >
         {/* Arcade cabinet frame */}
-        <div className="bg-card border-4 border-primary p-8 md:p-12 relative pixel-border-neon overflow-hidden">
+        <div className="bg-black/40 backdrop-blur-md border-4 border-primary p-8 md:p-12 relative pixel-border-neon overflow-hidden">
           {/* Screen bezel */}
           <div className="absolute top-2 left-2 right-2 h-1 bg-primary opacity-50" />
           <div className="absolute bottom-2 left-2 right-2 h-1 bg-primary opacity-50" />
